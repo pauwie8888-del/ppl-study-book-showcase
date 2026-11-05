@@ -1,39 +1,60 @@
-# PPL Study Book — Personal Learning Project
+# PPL Study Assistant — Theory, Moodle Explanations and Radio Practice
 
-A personal study companion for organising aviation theory into manageable topics, active revision and progress review. This repository explains the project and my design reasoning. The study book and working learning system remain private.
+A personal aviation learning project that brings explanations, practice and revision closer to the moment they are needed. It includes a browser study assistant, a mobile-friendly practice app and a structured Aircraft General Knowledge learning system.
 
-## The problem
+This is an information-only portfolio. The application, study materials, books and question banks remain private.
 
-Reading a theory chapter once does not show whether I understand it or will remember it later. I wanted a clearer way to connect explanations, practice, mistakes and revision.
+## The problem I wanted to solve
 
-## My approach
+A chapter quiz tells me whether I chose the expected answer, but it does not necessarily explain the concept, an unfamiliar term or why an alternative answer is wrong. Looking up each point manually interrupts studying. Studying only at a computer also makes it harder to use short opportunities for revision.
 
-The inspected version focuses on Aircraft General Knowledge. It combines structured lessons, topic-based practice, revision of mistakes and progress tracking. The wider private project also contains browser and mobile study tools; this overview does not claim complete coverage of every PPL subject.
+The project addresses both problems: explanations beside the material I am working on, and practice that is easy to access on a phone. Chapter questions are one part of that wider learning experience.
 
-## Reasoning behind the design
+## What the project includes
 
-- Break a large syllabus into smaller study topics so that progress is visible.
-- Use active recall rather than relying only on rereading.
-- Revisit weak areas over time and mix topics to test understanding beyond familiar question order.
-- Keep explanations connected to source references so that uncertain points can be checked.
-- Treat a readiness indicator as a study aid, not proof of competence or permission to fly.
+| Area | What it does | Where it is implemented |
+|---|---|---|
+| Terminology and concept explanations | Explains aviation keywords and concepts in simpler language | Browser study side panel |
+| Ask the book | Accepts a topic, section, sentence or page reference and provides a study explanation with references | Browser study side panel |
+| Selected-text explanations | Lets the learner load a book page and ask for an explanation of a selected passage | Browser study side panel |
+| Moodle answer explanations | Reads the visible practice question and options, looks for relevant reference material and explains the answer within the study interface, without requiring a separate manual book lookup | Browser extension on supported Moodle practice/review pages |
+| Diagram-based study | Includes a path for studying visible question images with AI assistance | Browser extension; image clarity and provider availability matter |
+| Mobile theory revision | Offers chapter-based questions, explanations and progress review in a phone-friendly interface | Mobile web app/PWA |
+| Aviation phonetic alphabet | Provides recall practice, answer checking and correction | Browser side panel and mobile app |
+| Radio terminology and standard phrases | Provides recall exercises with feedback, hints and review | Browser side panel and mobile app |
+| Radio phraseology and guided study | Includes a dedicated phraseology practice view and a mobile guided radio-route study area with explanations | Browser practice view and mobile app; content differs between surfaces |
+| Structured learning and revision | Combines lessons, topic practice, spaced review, a mistake log and progress indicators | Separate Aircraft General Knowledge study system |
 
-These choices make the project a practical example of organising complex information and designing a learning process with feedback.
+The private project also contains a separate local PDF question-answering exploration. Its presence is not treated as proof that it is part of the verified browser or mobile experience.
 
-## What is implemented and checked
+## Why I designed it this way
 
-The private Aircraft General Knowledge learning system includes lessons, practice sessions, spaced review, a mistake log and locally saved progress.
+**Reduce the interruption between a question and understanding it.** The side panel keeps the explanation near the Moodle practice task. The source material is still consulted by the system; the learner does not have to repeatedly leave the question to search through the book manually.
 
-On 5 November 2026, the local content-structure check completed without errors and all **32 learning-logic tests passed**. The checks cover areas such as review scheduling, progress rules, question selection, scoring and saved-state handling. They do not establish that every explanation is correct, that the interface works on every device, or that learning outcomes have improved.
+**Support more than finding the correct letter.** Terminology, topic and selected-text explanations provide ways to understand the underlying idea. This matters when the difficulty is wording rather than the entire topic.
 
-## Current limits and next steps
+**Make revision practical away from the desk.** The mobile interface supports short theory and radio-practice sessions. Cached practice content can support offline use after it has been loaded; AI-assisted explanations and fresh source retrieval can still require network access.
 
-The project supports personal revision. It is not an official textbook, certified training course, exam tool or operational flight reference. No exam pass rate, certification or measured improvement in retention is claimed. Instructor feedback, broader usability checks and further content review remain useful next steps.
+**Use different practice for different skills.** Reading a concept, recognising a correct answer, recalling alphabet words and producing a radio phrase are different learning tasks. The project gives them distinct study activities rather than treating them all as the same chapter quiz.
 
-Third-party training materials remain the property of their respective owners. This portfolio does not claim authorship of those materials.
+**Keep uncertainty visible.** A Moodle review answer key, a source-supported recommendation and insufficient evidence are different statuses. A confident explanation is not automatically an independently verified answer.
 
-## Public information only
+[Read the detailed learning-design rationale](LEARNING-DESIGN.md)
 
-The book, PDFs, lesson text, question banks, answer keys, diagrams, source code, prompts and personal progress data are not included. There are no downloadable book files or playable study application in this repository. As with any public webpage, the descriptive text itself can be copied or saved.
+## What was checked
 
-[Read the short learning-design note](LEARNING-DESIGN.md)
+On 5 November 2026, the full local project test command passed. It includes extension extraction and explanation-flow checks, keyword/topic/selected-text controls, source-retrieval and refusal cases, mobile app checks, phonetic alphabet practice, standard radio words and phraseology practice. Provider-facing tests use controlled local responses; this is not a new paid AI test or a live Moodle/browser-session test.
+
+The separate Aircraft General Knowledge content-structure check also passed, alongside 32 learning-logic tests. Those checks cover areas such as review scheduling, progress rules, practice selection and saved-state handling.
+
+The review inspected the browser implementation, mobile interface and service worker, radio-practice modules, learning game, tests and hosting documentation. It did not verify a fresh mobile deployment or every device/browser combination. Passing structural and logic checks does not establish that every teaching explanation is correct.
+
+## Scope and limits
+
+The project supports personal theory revision and radio study. It is not an official textbook, certified course, live-exam tool or operational flight reference. The inspected implementation covers more than Aircraft General Knowledge, including Principles of Flight practice and radio study; it does not establish complete, equally tested coverage of every PPL subject.
+
+Source access, Moodle page structure, image quality and AI-provider availability can affect explanations. Instructor review and appropriate authoritative references remain important. No exam pass rate or measured improvement in retention is claimed. Third-party textbooks and training materials remain the property of their respective owners.
+
+## What is public
+
+Only this project description and its design rationale are published. No textbooks, PDFs, lessons, question text, answer keys, diagrams, application downloads, source code, prompts or personal progress data are included. The public descriptions can be copied or saved; the working study system is not distributed here.
